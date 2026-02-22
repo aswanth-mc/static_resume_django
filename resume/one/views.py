@@ -1,19 +1,17 @@
-from urllib import request
-
 from django.shortcuts import render
 
-# Create your views here.
-resume = {
-    "name": "aswanth",
-    "age": 21,
-    "gender":"male",
-    "skills": ["python","django","html","css"],
-    "education": {
-            "degree": "Bachelor of Computer Applications",
-            "college": "Calicut University",
-            "year": 2025
+def resume_view(request):
+    resume = {
+        "name": "aswanth",
+        "age": 21,
+        "gender": "male",
+        "email": "aswanth@example.com",
+        "skills": ["Python", "Django", "HTML","css"],
+        "education": {
+            "degree": "Bachelor of Science in Computer Science",
+            "year": "2025",
+            "university": "calicut University"
         }
-    
-}
+    }
 
-return render(request, "resume.html", {"resume": resume})
+    return render(request, "resume.html", {"resume": resume})
