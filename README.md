@@ -1,0 +1,1 @@
+# static_resume_django
