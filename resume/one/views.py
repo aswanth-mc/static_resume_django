@@ -1,3 +1,5 @@
+from urllib import request
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -13,3 +15,5 @@ resume = {
         }
     
 }
+
+return render(request, "resume.html", {"resume": resume})
