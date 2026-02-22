@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <h1>{{ resume.name }}</h1>
+
+    <p>
+        {% if resume.gender == "male" %}
+            👨
+        {% elif resume.gender == "female" %}
+            👩
+        {% else %}
+            🧑
+        {% endif %}
+    </p>
+
+    <p><strong>Age:</strong> {{ resume.age }}</p>
+    <p><strong>Email:</strong> {{ resume.email }}</p>
+
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in resume.skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Education</h2>
+    <p><strong>Degree:</strong> {{ resume.education.degree }}</p>
+    <p><strong>College:</strong> {{ resume.education.college }}</p>
+    <p><strong>Year:</strong> {{ resume.education.year }}</p>
+
+</body>
+</html>
