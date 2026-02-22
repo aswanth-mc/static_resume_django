@@ -1,5 +1,7 @@
-from django urls import path
+from django.urls import path
 
-urlpatterns =[
-    
+from one import views
+
+urlpatterns = [
+    path('', views.resume_view, name='resume'),
 ]
